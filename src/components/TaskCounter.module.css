@@ -1,0 +1,22 @@
+.taskCounter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.taskCounter p {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 17px;
+}
+
+.taskCounter span {
+  font-size: 0.75rem;
+  line-height: 15px;
+  color: var(--gray-200);
+  font-weight: 700;
+  background: var(--gray-400);
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+}

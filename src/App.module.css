@@ -5,16 +5,25 @@
   padding: 0 1rem;
 }
 
-@media (max-width: 768px) {
-  html {
-    font-size: 87.5%;
-  }
-}
-
 .formContainer {
   display: flex;
   justify-content: center;
   align-items: center;
 
   margin-top: -1.6875rem;
+}
+
+.taskCounterContainer {
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
 }
