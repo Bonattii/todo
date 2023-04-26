@@ -1,0 +1,44 @@
+.task {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+
+  padding: 1rem;
+  background: var(--gray-400);
+
+  border: 1px solid var(--gray-400);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+}
+
+.checkbox {
+  border-radius: 999px;
+  border: 2px solid var(--blue-500);
+  background: transparent;
+  padding: 0.5rem;
+}
+
+.checked {
+  border: 2px solid var(--purple-500);
+  border-radius: 999px;
+  background: var(--purple-500);
+  color: var(--gray-100);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task p {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--gray-100);
+  margin-top: -0.2rem;
+}
+
+.trashCan {
+  background: transparent;
+  border: 0;
+  color: var(--gray-300);
+  margin-top: -0.2rem;
+}

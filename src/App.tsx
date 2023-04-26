@@ -1,3 +1,4 @@
+import { Task } from './components/Task';
 import { NewTask } from './components/NewTask';
 import { Header } from './components/Header';
 import { EmptyTasks } from './components/EmptyTasks';
@@ -22,6 +23,7 @@ export const App = () => {
         </div>
 
         <EmptyTasks />
+        <Task />
       </div>
     </div>
   );
