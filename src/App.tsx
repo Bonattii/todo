@@ -49,6 +49,14 @@ export const App = () => {
     setTasks(tasksWithoutSelectedOne);
   };
 
+  const deleteTask = (id: string) => {
+    const tasksWithoutDeletedOne = tasks.filter(task => task.id !== id);
+
+    setTasks(tasksWithoutDeletedOne);
+  };
+
+  const tasksCompleted = tasks.filter(task => task.isComplete === true);
+
   return (
     <div>
       <Header />
@@ -78,7 +86,11 @@ export const App = () => {
             count={tasks.length}
             color="purple"
           />
-          <TaskCounter title="Completed" count={0} color="blue" />
+          <TaskCounter
+            title="Completed"
+            count={tasksCompleted.length}
+            color="blue"
+          />
         </div>
 
         {tasks.length > 0 ? (
@@ -88,6 +100,7 @@ export const App = () => {
               id={task.id}
               title={task.title}
               onCheck={markTaskAsDone}
+              onDeleteTask={deleteTask}
             />
           ))
         ) : (

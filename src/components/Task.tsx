@@ -7,9 +7,15 @@ interface TaskProps {
   title: string;
   id: string;
   onCheck: (id: string) => void;
+  onDeleteTask: (id: string) => void;
 }
 
-export const Task: React.FC<TaskProps> = ({ title, onCheck, id }) => {
+export const Task: React.FC<TaskProps> = ({
+  title,
+  onCheck,
+  onDeleteTask,
+  id
+}) => {
   const [isChecked, setIsChecked] = useState(false);
 
   // change checked for a match with checked tasks later
@@ -17,6 +23,10 @@ export const Task: React.FC<TaskProps> = ({ title, onCheck, id }) => {
   const handleCheckTask = () => {
     setIsChecked(!isChecked);
     onCheck(id);
+  };
+
+  const handleDeleteTask = () => {
+    onDeleteTask(id);
   };
 
   return (
@@ -42,7 +52,11 @@ export const Task: React.FC<TaskProps> = ({ title, onCheck, id }) => {
         {title}
       </p>
 
-      <button type="button" className={styles.trashCan}>
+      <button
+        onClick={handleDeleteTask}
+        type="button"
+        className={styles.trashCan}
+      >
         <Trash size={20} />
       </button>
     </div>
