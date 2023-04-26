@@ -5,12 +5,19 @@ import styles from './Task.module.css';
 
 interface TaskProps {
   title: string;
+  id: string;
+  onCheck: (id: string) => void;
 }
 
-export const Task: React.FC<TaskProps> = ({ title }) => {
+export const Task: React.FC<TaskProps> = ({ title, onCheck, id }) => {
   const [isChecked, setIsChecked] = useState(false);
 
   // change checked for a match with checked tasks later
+
+  const handleCheckTask = () => {
+    setIsChecked(!isChecked);
+    onCheck(id);
+  };
 
   return (
     <div
@@ -19,7 +26,7 @@ export const Task: React.FC<TaskProps> = ({ title }) => {
     >
       <button
         type="button"
-        onClick={() => setIsChecked(!isChecked)}
+        onClick={handleCheckTask}
         className={`${!isChecked ? styles.checkbox : styles.checked}`}
       >
         {isChecked && <Check />}

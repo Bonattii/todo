@@ -33,6 +33,22 @@ export const App = () => {
     setTaskTile('');
   };
 
+  const markTaskAsDone = (id: string) => {
+    const selectedTask = tasks.filter(task => task.id === id);
+    const tasksWithoutSelectedOne = tasks.filter(task => task.id !== id);
+
+    selectedTask[0].isComplete = !selectedTask[0].isComplete;
+
+    // Will take care of putting the task at the end or at the start of the array
+    if (selectedTask[0].isComplete === true) {
+      tasksWithoutSelectedOne.push(selectedTask[0]);
+    } else if (selectedTask[0].isComplete === false) {
+      tasksWithoutSelectedOne.unshift(selectedTask[0]);
+    }
+
+    setTasks(tasksWithoutSelectedOne);
+  };
+
   return (
     <div>
       <Header />
@@ -57,12 +73,23 @@ export const App = () => {
         </div>
 
         <div className={styles.taskCounterContainer}>
-          <TaskCounter title="Tasks created" count={0} color="purple" />
+          <TaskCounter
+            title="Tasks created"
+            count={tasks.length}
+            color="purple"
+          />
           <TaskCounter title="Completed" count={0} color="blue" />
         </div>
 
         {tasks.length > 0 ? (
-          tasks.map(task => <Task key={task.id} title={task.title} />)
+          tasks.map(task => (
+            <Task
+              key={task.id}
+              id={task.id}
+              title={task.title}
+              onCheck={markTaskAsDone}
+            />
+          ))
         ) : (
           <EmptyTasks />
         )}
