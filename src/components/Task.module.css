@@ -4,6 +4,7 @@
   gap: 0.75rem;
 
   padding: 1rem;
+  margin-bottom: 0.75rem;
   background: var(--gray-400);
 
   border: 1px solid var(--gray-400);
@@ -16,21 +17,37 @@
   border: 2px solid var(--blue-500);
   background: transparent;
   padding: 0.5rem;
+  margin-top: -0.2rem;
+
+  transition: background-color 0.1s;
+}
+
+.checkbox:hover {
+  background: var(--blue-700);
 }
 
 .checked {
-  border: 2px solid var(--purple-500);
+  border: 2px solid var(--purple-700);
   border-radius: 999px;
-  background: var(--purple-500);
+  background: var(--purple-700);
   color: var(--gray-100);
+  margin-top: -0.2rem;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition: background-color 0.1s, border-color 0.1s;
+}
+
+.checked:hover {
+  background-color: var(--purple-500);
+  border-color: var(--purple-500);
 }
 
 .task p {
   font-size: 0.875rem;
+  flex: 1;
   line-height: 1.4;
   color: var(--gray-100);
   margin-top: -0.2rem;
@@ -41,4 +58,8 @@
   border: 0;
   color: var(--gray-300);
   margin-top: -0.2rem;
+}
+
+.trashCan:hover {
+  color: var(--red-500);
 }

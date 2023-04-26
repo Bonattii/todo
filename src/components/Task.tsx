@@ -3,7 +3,11 @@ import { useState } from 'react';
 
 import styles from './Task.module.css';
 
-export const Task = () => {
+interface TaskProps {
+  title: string;
+}
+
+export const Task: React.FC<TaskProps> = ({ title }) => {
   const [isChecked, setIsChecked] = useState(false);
 
   // change checked for a match with checked tasks later
@@ -28,9 +32,7 @@ export const Task = () => {
             : { textDecoration: 'none' }
         }
       >
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum deserunt
-        laudantium masdaf asdf dsafasd sdafs saf asd safds sdafsdf safsd fsadf
-        sadf safasd fsda fsa asfasd
+        {title}
       </p>
 
       <button type="button" className={styles.trashCan}>
