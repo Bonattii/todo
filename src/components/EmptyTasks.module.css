@@ -1,0 +1,26 @@
+.emptyTasksContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  text-align: center;
+  padding-top: 4rem;
+
+  border-top: 1px solid var(--gray-400);
+  border-radius: 8px;
+}
+
+.emptyTasksContainer svg {
+  color: var(--gray-400);
+}
+
+.emptyContent h3 {
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.emptyContent p {
+  line-height: 1.4;
+}
